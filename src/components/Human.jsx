@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Human = () => {
+const Human = (props) => {
+  console.log(props.human);
+  
   return (
-    <div>Human</div>
+    <div>
+      {props.human.map((person) => (
+        <div key={person.id}>
+          <img src={person.image}  />
+          <p>{person.name}</p>
+        </div>
+      ))}
+      <hr />
+      </div>
   )
 }
 
